@@ -1,0 +1,14 @@
+(function($,undefined){
+	$(document).ready(function(){
+		$('button').click(function(){
+			$.post('./php/insert_problem.php',
+				{
+					grade:$('[name=school]').val()+$('[name=grade]').val(),
+					ques:$('textarea').val(),
+					ans:$('[name=answer]').val()
+				}
+				,function(d){console.log(d)}
+			);
+		});
+	});
+})(jQuery);
